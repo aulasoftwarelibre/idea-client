@@ -2,11 +2,22 @@
   "scripts": {
     "build": "next build src",
     "dev": "next src",
-    "now-build": "next build src"
+    "now-build": "next build src",
+    "storybook": "start-storybook -p 6006 -c config/storybook",
+    "build-storybook": "build-storybook  -c config/storybook"
   },
   "dependencies": {
+    "core-js": "3",
     "next": "^8.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "^5.0.10",
+    "@storybook/addon-actions": "^5.0.10",
+    "@storybook/addon-links": "^5.0.10",
+    "@storybook/addons": "^5.0.10",
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5"
   }
 }
