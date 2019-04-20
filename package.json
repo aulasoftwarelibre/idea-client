@@ -10,14 +10,19 @@
     "core-js": "3",
     "next": "^8.0.0",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "semantic-ui-react": "^0.86.0"
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.10",
+    "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-links": "^5.0.10",
     "@storybook/addons": "^5.0.10",
-    "@babel/core": "^7.4.3",
-    "babel-loader": "^8.0.5"
+    "@storybook/react": "^5.0.10",
+    "@types/storybook__addon-actions": "^3.4.2",
+    "@types/storybook__react": "^4.0.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
+    "typescript": "^3.4.4"
   }
 }
