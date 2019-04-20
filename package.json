@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "next build src",
+    "dev": "next src",
+    "now-build": "next build src"
+  },
+  "dependencies": {
+    "next": "^8.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
