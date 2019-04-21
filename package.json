@@ -13,7 +13,8 @@
     "next": "^8.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "semantic-ui-react": "^0.86.0"
+    "react-time-ago": "^5.0.4",
+    "semantic-ui-react": "^0.86.0",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
