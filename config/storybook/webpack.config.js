@@ -3,7 +3,10 @@ module.exports = ({ config }) => {
     test: /\.(ts|tsx)$/,
     use: [
       {
-        loader: require.resolve("awesome-typescript-loader")
+        loader: require.resolve("awesome-typescript-loader"),
+        options: {
+          plugins: ["styled-jsx/babel", "storybook-settings"]
+        }
       }
     ]
   });
