@@ -1,26 +1,36 @@
 import * as React from "react";
 import { Card, Icon, Button, Label } from "semantic-ui-react";
-import ReactTimeAgo from "react-time-ago";
+import { FormattedMessage, FormattedRelative } from "react-intl";
 
 import { IdeaExtraItem } from "./IdeaExtraItem";
 import { IdeaActionButton } from "./IdeaActionButton";
-import { Idea } from "../../domain/idea/Idea";
+import { Idea } from "../../model/Idea";
 
 export const IdeaItem = ({
   idea,
   summary,
+  handleOnTitleClick,
   handleOnJoin,
   handleOnLeave
 }: Props): JSX.Element => (
-  <Card fluid={true}>
+  <Card
+    fluid={true}
+    {...(summary ? { onClick: () => handleOnTitleClick(idea.slug) } : {})}
+  >
     <Card.Content>
       <Card.Meta className="send by">
-        <span className="group">{idea.group.name}</span> Send by user{" "}
-        <ReactTimeAgo date={idea.createdAt} locale="es" />
+        <span className="group">{idea.group.name}</span>
+        <FormattedMessage
+          id="idea.send"
+          values={{
+            user: idea.owner.username
+          }}
+        />
+        <FormattedRelative value={idea.createdAt} />
       </Card.Meta>
       <Card.Header>{idea.title}</Card.Header>
       <Label attached={"top right"} inverted color={"green"}>
-        APPROVED
+        <FormattedMessage id={`idea.state.${idea.state}`} />
       </Label>
       <Card.Description>
         <div
@@ -42,19 +52,35 @@ export const IdeaItem = ({
           handleOnLeave={handleOnLeave}
         />
       )}
-      <IdeaExtraItem icon="user" label="22/40 people" />
-      <IdeaExtraItem icon="comment" label="10 comments" />
+      <IdeaExtraItem icon="user">
+        {idea.numSeats ? (
+          <FormattedMessage
+            id="idea.extra.users"
+            values={{
+              count: idea.votes.length,
+              seats: idea.numSeats
+            }}
+          />
+        ) : (
+          <FormattedMessage
+            id="idea.extra.users.unlimited"
+            values={{
+              count: idea.votes.length
+            }}
+          />
+        )}
+      </IdeaExtraItem>
     </Card.Content>
     <style jsx>{`
       .ui.card {
         border-radius: 0;
       }
-      .ui.label {
-        border-top-right-radius: 0 !important;
-      }
       .ui.card > .content > .description {
         clear: unset;
         font-family: "Lato", sans-serif;
+      }
+      .title {
+        cursor: pointer;
       }
       .summary {
         -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
@@ -83,6 +109,7 @@ export const IdeaItem = ({
 export interface Props {
   idea: Idea;
   summary: boolean;
+  handleOnTitleClick: (slug: string) => any;
   handleOnJoin: any;
   handleOnLeave: any;
 }

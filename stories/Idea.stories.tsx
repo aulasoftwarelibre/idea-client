@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { object, boolean } from "@storybook/addon-knobs";
 
 import { IdeaItem } from "../components/idea/IdeaItem";
-import { Idea } from "../domain/idea/Idea";
+import { Idea } from "../model/Idea";
 
 const ideaItem: Idea = {
   title: "An amazing idea title",
@@ -15,11 +15,26 @@ const ideaItem: Idea = {
     `<p>A shock obstructs the prerequisite plant. The recovery participates before the ago developer. The physicist vanishes inside a debate. A verified counterpart bankrupts the wound. A miserable rhythm slaves past the puzzle.</p>`,
   closed: false,
   state: "approved",
+  slug: "an-amazing-idea-title",
   createdAt: new Date(),
   updatedAt: new Date(),
+  owner: {
+    username: "bofh"
+  },
   group: { name: "Main Group" },
   numSeats: 0,
-  startsAt: new Date(),
+  votes: [
+    {
+      user: {
+        username: "johndoe"
+      }
+    },
+    {
+      user: {
+        username: "jennydoe"
+      }
+    }
+  ],
   joined: false
 };
 
@@ -34,6 +49,7 @@ storiesOf("Idea", module).add(
         <IdeaItem
           idea={idea}
           summary={summary}
+          handleOnTitleClick={action("title-action")}
           handleOnJoin={action("join-action")}
           handleOnLeave={action("leave-action")}
         />
