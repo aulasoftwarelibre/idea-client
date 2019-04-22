@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Icon, SemanticICONS } from "semantic-ui-react";
 
-export const IdeaExtraItem = ({ icon, label }: Props): JSX.Element => (
+export const IdeaExtraItem = ({ icon, children }: Props): JSX.Element => (
   <span className="extra item">
     <Icon name={icon} />
-    {label}
+    {children}
     <style jsx>{`
       .extra.item {
         margin-left: 10px;
@@ -15,5 +15,5 @@ export const IdeaExtraItem = ({ icon, label }: Props): JSX.Element => (
 
 export interface Props {
   icon: SemanticICONS;
-  label: string;
+  children: any;
 }
