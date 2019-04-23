@@ -10,6 +10,8 @@ export const messages = {
     'idea.state.pending': 'PENDING',
     'idea.state.approved': 'APPROVED',
     'idea.state.rejected': 'REJECTED',
+    'idea.topmenu.help': 'Help',
+    'idea.topmenu.home': 'Home',
     'idea.extra.users': `{count}/{seats} {count, plural, one {person} other {people}}`,
     'idea.extra.users.unlimited': `{count} {count, plural, one {person} other {people}}`
   },
@@ -23,6 +25,8 @@ export const messages = {
     'idea.state.pending': 'PENDIENTE',
     'idea.state.approved': 'APROBADA',
     'idea.state.rejected': 'RECHAZADA',
+    'idea.topmenu.help': 'Ayuda',
+    'idea.topmenu.home': 'Inicio',
     'idea.extra.users': `{count}/{seats} {count, plural, one {persona} other {personas}}`,
     'idea.extra.users.unlimited': `{count} {count, plural, one {persona} other {personas}}`
   }

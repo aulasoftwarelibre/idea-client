@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Menu, Icon, Container } from 'semantic-ui-react';
 import styled from 'styled-components';
 
@@ -15,7 +16,14 @@ export const TopMenu = ({}): JSX.Element => (
           <MenuLogoItem className="logo" as="a" />
         </ActiveLink>
         <ActiveLink activeClassName="active" href="/index" passHref>
-          <Menu.Item>Inicio</Menu.Item>
+          <Menu.Item>
+            <FormattedMessage id="idea.topmenu.home" />
+          </Menu.Item>
+        </ActiveLink>
+        <ActiveLink activeClassName="active" href="/help" passHref>
+          <Menu.Item>
+            <FormattedMessage id="idea.topmenu.help" />
+          </Menu.Item>
         </ActiveLink>
       </Container>
     </Menu>
