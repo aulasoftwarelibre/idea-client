@@ -30,7 +30,7 @@ const MenuBurgerItem = styled(Menu.Item)`
 
 const MenuLogoItem = styled(Menu.Item)`
   &&&&&& {
-    background: url('/images/ideas-small.png') no-repeat;
+    background: url('images/ideas-small.png') no-repeat;
     width: 66px;
     height: 27px;
     margin: 5px 10px 0 15px;
