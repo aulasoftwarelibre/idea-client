@@ -33,6 +33,7 @@
     "@storybook/addons": "^5.0.10",
     "@storybook/react": "^5.0.10",
     "@types/faker": "^4.1.5",
+    "@types/next": "^8.0.3",
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
