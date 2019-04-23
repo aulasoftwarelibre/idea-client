@@ -4,8 +4,8 @@
     "build": "next build",
     "dev": "next",
     "now-build": "next build",
-    "storybook": "start-storybook -p 6006 -c config/storybook",
-    "build-storybook": "build-storybook  -c config/storybook"
+    "storybook": "start-storybook -p 6006 -c config/storybook -s static",
+    "build-storybook": "build-storybook  -c config/storybook -s static"
   },
   "dependencies": {
     "@types/react-intl": "^2.3.17",
