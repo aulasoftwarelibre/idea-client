@@ -23,16 +23,14 @@ export const TopMenu = ({}): JSX.Element => (
 );
 
 const MenuBurgerItem = styled(Menu.Item)`
-  &&&& {
+  .ui.menu:not(.vertical) &.item {
     display: none;
   }
 `;
 
 const MenuLogoItem = styled(Menu.Item)`
-  &&&&&& {
-    background: url('images/ideas-small.png') no-repeat;
-    width: 66px;
-    height: 27px;
-    margin: 5px 10px 0 15px;
-  }
+  background: url('images/ideas-small.png') no-repeat;
+  width: 66px;
+  height: 27px;
+  margin: 5px 10px 0 15px;
 `;
